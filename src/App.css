@@ -1,0 +1,91 @@
+
+body{
+    background-image: url("../public/backgroud.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.all-task{
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(53, 33, 33, 0.05)
+    );
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px #d8caca59,
+        inset 0 1px 1px rgba(255, 255, 255, 0.57);
+    color: white;
+    width: 50%;
+    height: 60%;
+    border-radius: 15px;
+    border: 1px solid rgba(21, 6, 6, 0.207);
+    overflow: auto;
+    font-weight: 500;
+    font-size: 1.3rem;
+    overflow: auto;
+}
+
+.add-task-box{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.add-task-box input{
+    width: 70%;
+    padding: 14px 22px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(18px);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.add-task-box input::placeholder{
+    color: rgb(134, 128, 128);
+}
+
+.add-btn{
+    color: white;
+    border-radius: 25rem;
+    padding: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.278);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    transition: 0.1s;
+}
+.add-btn:hover{
+    background: linear-gradient(145deg, rgba(244, 242, 242, 0.333), rgba(155, 255, 158, 0.305), rgba(39, 255, 39, 0.478));
+    transform: scale(1.02);
+    box-shadow: 1px, 1px, 25px, rgb(79, 23, 23);
+}
+
+#done{
+    color: rgb(106, 177, 0);
+}
+#done:hover{
+    color: rgb(153, 255, 0);
+    transform: scale(1.09);
+    filter:
+        drop-shadow(0 0 10px rgba(153, 255, 0, 0.8));
+}
+
+#delete{
+    color: rgb(164, 101, 101);
+}
+#delete:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.09);
+    filter:
+        drop-shadow(0 0 10px rgb(255, 0, 0));
+}
