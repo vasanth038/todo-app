@@ -1,28 +1,80 @@
 # Task Master Pro 🚀
 
-A high-performance, minimalist task management dashboard built with **React**. This project focuses on modern UI patterns, efficient state management, and optimized rendering cycles.
+## 🌐 Live Demo
 
-## ✨ High-Impact Features
-* **Progress Analytics:** Real-time calculation of completion percentages using derived state logic to monitor productivity at a glance.
-* **Memoized Search & Filtering:** A high-performance filtering system (All/Active/Completed) optimized with `useMemo` to ensure zero lag during interaction.
-* **Undo Functionality:** Enhanced UX through a "Soft Delete" pattern, allowing users to restore accidentally deleted tasks via a non-blocking toast notification.
-* **Task Prioritization:** Integrated priority levels (High/Medium/Low) to help users organize their workflow effectively.
-* **Persistence Layer:** Robust integration with Browser LocalStorage, featuring error handling to ensure data integrity across sessions.
-* **Responsive Design:** A mobile-first, modern UI with support for both Dark and Light modes.
+https://todo-app-three-kappa-32.vercel.app/
 
-## 🛠️ Technical Stack
-* **Framework:** React (Vite)
-* **State Management:** React Hooks (`useState`, `useEffect`, `useRef`, `useMemo`)
-* **Styling:** Modern CSS (CSS Variables, Flexbox, Mobile-First Design)
-* **Safety:** `crypto.randomUUID()` for unique indexing and `try/catch` for data parsing.
+---
 
-## 🚀 Why This Project Stands Out
-Instead of just basic CRUD (Create, Read, Update, Delete) operations, this project implements professional engineering patterns:
-1. **Performance Optimization:** Prevented unnecessary re-renders and re-calculations using React optimization hooks.
-2. **User-Centric Design:** Focused on "Error Prevention" by adding an Undo feature rather than intrusive confirmation pop-ups.
-3. **Clean Architecture:** Separated business logic (filtering/sorting) from the UI components for better maintainability.
+## 📌 Overview
+
+Task Master Pro is a modern and responsive To-Do application built using React. It focuses on clean UI, efficient state management, and a smooth user experience.
+
+---
+
+## ✨ Features
+
+* Add, edit, and delete tasks
+* Mark tasks as completed
+* Filter tasks (All / Active / Completed)
+* Search tasks instantly
+* Drag-and-drop task reordering
+* Task priority levels (High / Medium / Low)
+* Progress tracking with completion percentage
+* Persistent storage using LocalStorage
+
+---
+
+## 🛠️ Tech Stack
+
+* React (Vite)
+* JavaScript (ES6+)
+* React Hooks (`useState`, `useEffect`, `useRef`, `useMemo`)
+* CSS (Flexbox, responsive design)
+
+---
+
+## 🚀 Key Highlights
+
+* Optimized filtering using `useMemo` to improve performance
+* Implemented drag-and-drop without external libraries
+* Handled edge cases like empty input and localStorage errors
+* Clean and maintainable component structure
+
+---
 
 ## 📥 Getting Started
-1. Clone the repository: 
-   ```bash
-   git clone [https://github.com/vasanth038/todo-app.git](https://github.com/vasanth038/todo-app.git)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/vasanth038/todo-app.git
+cd todo-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 📌 Future Improvements
+
+* Add due dates and reminders
+* Implement undo delete functionality
+* Backend integration (Node.js / API)
+* User authentication
+
+---
+
+## 👨‍💻 Author
+
+Vasanth
