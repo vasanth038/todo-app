@@ -1,91 +1,227 @@
+body.dark {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --success: #4ade80;
+    --danger: #f87171;
+    --warning: #fbbf24;
+    --accent: #60a5fa;
+    --transition: all 0.2s ease-in-out;
+}
 
-body{
+body.light {
+    --bg-color: #f4f4f9;
+    --text-color: #333333;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --input-bg: rgba(0, 0, 0, 0.05);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --accent: #3b82f6;
+    --transition: all 0.2s ease-in-out;
+}
+
+body {
     background-image: url("../public/backgroud.png");
+    background-color: var(--bg-color);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: var(--transition);
 }
 
-.all-task{
-    background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.1),
-        rgba(53, 33, 33, 0.05)
-    );
-    backdrop-filter: blur(20px);
-    box-shadow:
-        0 8px 32px #d8caca59,
-        inset 0 1px 1px rgba(255, 255, 255, 0.57);
-    color: white;
-    width: 50%;
-    height: 60%;
-    border-radius: 15px;
-    border: 1px solid rgba(21, 6, 6, 0.207);
-    overflow: auto;
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.5);
+}
+
+.app-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.all-task {
+    height: 60vh;
+    overflow-y: auto;
     font-weight: 500;
-    font-size: 1.3rem;
-    overflow: auto;
+    font-size: 1.1rem;
 }
 
-.add-task-box{
-    width: 50%;
+.custom-input {
+    background: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: 8px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.custom-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.custom-input option {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.btn-primary-custom {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: var(--transition);
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-custom:active {
+    transform: translateY(0);
+}
+
+.filter-container {
     display: flex;
-    justify-content: space-evenly;
-
+    gap: 20px;
 }
 
-.add-task-box input{
-    width: 70%;
-    padding: 14px 22px;
-
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(18px);
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-
-    color: white;
-    font-size: 1rem;
+.filter-tab {
+    cursor: pointer;
+    color: gray;
     font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.add-task-box input::placeholder{
-    color: rgb(134, 128, 128);
+.filter-tab:hover {
+    color: var(--text-color);
 }
 
-.add-btn{
-    color: white;
-    border-radius: 25rem;
-    padding: 0.7rem;
-    background-color: rgba(255, 255, 255, 0.278);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.473);
-    transition: 0.1s;
-}
-.add-btn:hover{
-    background: linear-gradient(145deg, rgba(244, 242, 242, 0.333), rgba(155, 255, 158, 0.305), rgba(39, 255, 39, 0.478));
-    transform: scale(1.02);
-    box-shadow: 1px, 1px, 25px, rgb(79, 23, 23);
+.filter-tab.active {
+    color: var(--text-color);
+    font-weight: bold;
 }
 
-#done{
-    color: rgb(106, 177, 0);
-}
-#done:hover{
-    color: rgb(153, 255, 0);
-    transform: scale(1.09);
-    filter:
-        drop-shadow(0 0 10px rgba(153, 255, 0, 0.8));
+.filter-tab::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
 }
 
-#delete{
-    color: rgb(164, 101, 101);
+.filter-tab.active::after {
+    width: 100%;
 }
-#delete:hover{
-    color: rgb(255, 0, 0);
-    transform: scale(1.09);
-    filter:
-        drop-shadow(0 0 10px rgb(255, 0, 0));
+
+.task-item {
+    background: rgba(150, 150, 150, 0.05);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.task-item:hover {
+    background: rgba(150, 150, 150, 0.1);
+    transform: translateX(4px);
+}
+
+.task-options i {
+    font-size: 1.2rem;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.task-options i:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-grab {
+    cursor: grab;
+}
+
+.hover-scale {
+    transition: transform 0.2s;
+}
+
+.hover-scale:hover {
+    transform: scale(1.2);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up-animation {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+
+    .max-w-800,
+    .w-75 {
+        width: 100% !important;
+    }
+
+    .custom-input,
+    .btn-primary-custom {
+        width: 100% !important;
+    }
+
+    .all-task {
+        width: 100% !important;
+        padding: 1rem;
+    }
 }
